@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Life Tracker</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <h1>🌿 Life Tracker</h1>
+
+            <p class="greeting">
+                Good Morning 👋
+            </p>
+
+            <div class="date-selector">
+
+                <label for="trackerDate">📅 Select Date</label>
+
+                <input type="date" id="trackerDate">
+
+            </div>
+
+        </header>
+
+
+        <!-- Progress Card -->
+        <section class="card progress-card">
+
+            <h2>Today's Progress</h2>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+            <p class="progress-text">
+                0 / 8 Completed (0%)
+            </p>
+
+        </section>
+
+
+        <!-- Habits -->
+        <section class="card habits-card">
+
+            <h2>Today's Habits</h2>
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="wakeUp">
+
+                    Wake Up 5 AM
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="water">
+
+                    Water (3L)
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="gym">
+
+                    Gym
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="hairWash">
+
+                    Hair Wash
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="minoxidilAM">
+
+                    Minoxidil AM
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="minoxidilPM">
+
+                    Minoxidil PM
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="medicineAM">
+
+                    Medicine AM
+
+                </label>
+
+            </div>
+
+
+            <div class="habit-item">
+
+                <label>
+
+                    <input type="checkbox" id="medicinePM">
+
+                    Medicine PM
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Save Button -->
+        <section class="save-section">
+
+            <button id="saveBtn">
+
+                💾 Save Progress
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
