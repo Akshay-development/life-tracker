@@ -1,6 +1,11 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbxcjKsMZAst4_21tJIJ1jeyqyl_pwPBJ0cVX1FFkVcRDhFvJ5TcJT2himxNkwd8GcWU/exec";
 
+// ===============================
+// Tracker
+// ===============================
+
 const trackerDate = document.getElementById("trackerDate");
+
 const progressFill = document.querySelector(".progress-fill");
 const progressText = document.querySelector(".progress-text");
 
@@ -19,6 +24,44 @@ const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 trackerDate.value = new Date().toISOString().split("T")[0];
 
+// ===============================
+// Tabs
+// ===============================
+
+const trackerTab = document.getElementById("trackerTab");
+const financeTab = document.getElementById("financeTab");
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+tabButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        tabButtons.forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        if (btn.dataset.tab === "tracker") {
+
+            trackerTab.style.display = "block";
+            financeTab.style.display = "none";
+
+        } else {
+
+            trackerTab.style.display = "none";
+            financeTab.style.display = "block";
+
+            loadFinanceDashboard();
+
+        }
+
+    });
+
+});
+
+// ===============================
+// Progress
+// ===============================
+
 function updateProgress() {
 
     const visible = [...checkboxes].filter(cb =>
@@ -34,7 +77,12 @@ function updateProgress() {
     progressFill.style.width = percent + "%";
 
     progressText.textContent = `${completed} / ${total} Completed (${percent}%)`;
+
 }
+
+// ===============================
+// Hair Wash
+// ===============================
 
 function updateHairWash() {
 
@@ -47,12 +95,18 @@ function updateHairWash() {
     } else {
 
         hairWash.checked = false;
+
         hairWash.parentElement.parentElement.style.display = "none";
 
     }
 
     updateProgress();
+
 }
+
+// ===============================
+// Load Tracker
+// ===============================
 
 async function loadData() {
 
@@ -74,14 +128,21 @@ async function loadData() {
         minoxidilPM.checked = data.minoxidilPM;
         medicineAM.checked = data.medicineAM;
         medicinePM.checked = data.medicinePM;
+
     }
 
     updateProgress();
+
 }
+
+// ===============================
+// Save Tracker
+// ===============================
 
 async function saveData() {
 
     saveBtn.disabled = true;
+
     saveBtn.innerText = "Saving...";
 
     const payload = {
@@ -112,11 +173,34 @@ async function saveData() {
     setTimeout(() => {
 
         saveBtn.innerHTML = "💾 Save Progress";
+
         saveBtn.disabled = false;
 
     }, 1500);
 
 }
+
+// ===============================
+// Finance Dashboard
+// ===============================
+
+function loadFinanceDashboard() {
+
+    // Dummy values (Next step we'll read Google Sheets)
+
+    document.getElementById("totalOutstanding").innerText = "₹15,40,724";
+
+    document.getElementById("monthlyEmi").innerText = "₹41,820";
+
+    document.getElementById("monthlyInterest").innerText = "₹8,574";
+
+    document.getElementById("nextDue").innerText = "02 Aug 2026";
+
+}
+
+// ===============================
+// Events
+// ===============================
 
 checkboxes.forEach(cb =>
     cb.addEventListener("change", updateProgress)
@@ -126,4 +210,10 @@ trackerDate.addEventListener("change", loadData);
 
 saveBtn.addEventListener("click", saveData);
 
+// ===============================
+// Initial Load
+// ===============================
+
 loadData();
+
+loadFinanceDashboard();
