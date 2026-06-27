@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Life Tracker</title>
@@ -11,6 +14,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -34,152 +38,327 @@
 
             </div>
 
+            <!-- Tabs -->
+
+            <div class="tab-container">
+
+                <button class="tab-btn active" data-tab="tracker">
+                    🌿 Tracker
+                </button>
+
+                <button class="tab-btn" data-tab="finance">
+                    💰 Finance
+                </button>
+
+            </div>
+
         </header>
 
 
-        <!-- Progress Card -->
-        <section class="card progress-card">
 
-            <h2>Today's Progress</h2>
+        <!-- ========================= -->
+        <!-- Tracker Tab -->
+        <!-- ========================= -->
 
-            <div class="progress-bar">
+        <div id="trackerTab">
 
-                <div class="progress-fill"></div>
+            <!-- Progress Card -->
+            <section class="card progress-card">
 
-            </div>
+                <h2>Today's Progress</h2>
 
-            <p class="progress-text">
-                0 / 8 Completed (0%)
-            </p>
+                <div class="progress-bar">
 
-        </section>
+                    <div class="progress-fill"></div>
 
+                </div>
 
-        <!-- Habits -->
-        <section class="card habits-card">
+                <p class="progress-text">
+                    0 / 8 Completed (0%)
+                </p>
 
-            <h2>Today's Habits</h2>
+            </section>
 
-            <div class="habit-item">
 
-                <label>
 
-                    <input type="checkbox" id="wakeUp">
+            <!-- Habits -->
+            <section class="card habits-card">
 
-                    Wake Up 5 AM
+                <h2>Today's Habits</h2>
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="wakeUp">
 
-            <div class="habit-item">
+                        Wake Up 5 AM
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="water">
+                </div>
 
-                    Water (3L)
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="water">
 
-            <div class="habit-item">
+                        Water (3L)
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="gym">
+                </div>
 
-                    Gym
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="gym">
 
-            <div class="habit-item">
+                        Gym
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="hairWash">
+                </div>
 
-                    Hair Wash
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="hairWash">
 
-            <div class="habit-item">
+                        Hair Wash
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="minoxidilAM">
+                </div>
 
-                    Minoxidil AM
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="minoxidilAM">
 
-            <div class="habit-item">
+                        Minoxidil AM
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="minoxidilPM">
+                </div>
 
-                    Minoxidil PM
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="minoxidilPM">
 
-            <div class="habit-item">
+                        Minoxidil PM
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="medicineAM">
+                </div>
 
-                    Medicine AM
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
+                        <input type="checkbox" id="medicineAM">
 
-            <div class="habit-item">
+                        Medicine AM
 
-                <label>
+                    </label>
 
-                    <input type="checkbox" id="medicinePM">
+                </div>
 
-                    Medicine PM
 
-                </label>
+                <div class="habit-item">
 
-            </div>
+                    <label>
 
-        </section>
+                        <input type="checkbox" id="medicinePM">
 
+                        Medicine PM
 
-        <!-- Save Button -->
-        <section class="save-section">
+                    </label>
 
-            <button id="saveBtn">
+                </div>
 
-                💾 Save Progress
+            </section>
 
-            </button>
 
-        </section>
+
+            <!-- Save Button -->
+
+            <section class="save-section">
+
+                <button id="saveBtn">
+
+                    💾 Save Progress
+
+                </button>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- Finance Tab -->
+        <!-- ========================= -->
+
+        <div id="financeTab" style="display:none;">
+
+            <!-- Summary -->
+
+            <section class="card">
+
+                <h2>💰 Finance Dashboard</h2>
+
+                <div class="finance-summary">
+
+                    <div class="finance-box">
+
+                        <h3>Total Outstanding</h3>
+
+                        <p id="totalOutstanding">₹0</p>
+
+                    </div>
+
+                    <div class="finance-box">
+
+                        <h3>Monthly EMI</h3>
+
+                        <p id="monthlyEmi">₹0</p>
+
+                    </div>
+
+                    <div class="finance-box">
+
+                        <h3>Monthly Interest</h3>
+
+                        <p id="monthlyInterest">₹0</p>
+
+                    </div>
+
+                    <div class="finance-box">
+
+                        <h3>Next Due</h3>
+
+                        <p id="nextDue">--</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Loan Cards -->
+
+            <section class="card">
+
+                <h2>My Loans</h2>
+
+                <div id="loanCards">
+
+                    <div class="loan-card">
+
+                        <h3>👨 Akshay Personal Loan</h3>
+
+                        <p>Outstanding : ₹3,02,242</p>
+
+                        <p>EMI : ₹14,052</p>
+
+                        <p>Next Due : 07 Aug 2026</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>👩 Shubhangi Personal Loan</h3>
+
+                        <p>Outstanding : ₹2,92,195</p>
+
+                        <p>EMI : ₹10,871</p>
+
+                        <p>Next Due : 07 Aug 2026</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>🚗 Car Loan</h3>
+
+                        <p>Outstanding : ₹2,87,185</p>
+
+                        <p>EMI : ₹10,097</p>
+
+                        <p>Next Due : 10 Aug 2026</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>🏦 Bajaj OD</h3>
+
+                        <p>Outstanding : ₹1,50,000</p>
+
+                        <p>Monthly Interest : ₹1,781</p>
+
+                        <p>Due : 02 Aug 2026</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>🥇 Gold Loan</h3>
+
+                        <p>Outstanding : ₹4,68,497</p>
+
+                        <p>Monthly Interest : ₹6,793</p>
+
+                        <p>Due : 27 Jul 2026</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>💳 SBI Credit Card EMI</h3>
+
+                        <p>EMI : ₹3,400</p>
+
+                        <p>Ends : Jun 2027</p>
+
+                    </div>
+
+                    <div class="loan-card">
+
+                        <h3>🛒 Gramidial EMI</h3>
+
+                        <p>EMI : ₹3,400</p>
+
+                        <p>Ends : Mar 2027</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
 
     </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
